@@ -1,0 +1,11 @@
+node_modules/
+target/
+.env
+.env.*
+!.env.example
+*.log
+# Eclipse / Spring Tools
+.classpath
+.factorypath
+.project
+.settings/
