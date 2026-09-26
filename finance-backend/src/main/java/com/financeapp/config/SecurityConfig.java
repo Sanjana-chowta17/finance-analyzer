@@ -73,7 +73,8 @@ public class SecurityConfig {
 
         config.setAllowedOrigins(List.of(
             "http://localhost:5173",
-            "http://localhost:5174"
+            "http://localhost:5174",
+            "https://finance-analyzer-7xug.onrender.com"
         ));
 
         config.setAllowedMethods(List.of(
