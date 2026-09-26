@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const client = axios.create({
-  baseURL: 'http://localhost:8080/api',
+  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8080/api',
 })
 
 client.interceptors.request.use((config) => {
@@ -60,13 +60,11 @@ export const insightApi = {
     client.post('/insights/chat', { question }),
 }
 
-
 /* =========================
    ACCOUNT API
    ========================= */
 
 export const userApi = {
-
   // Get logged-in user's profile
   getProfile: () =>
     client.get('/users/me'),
@@ -79,6 +77,5 @@ export const userApi = {
   changePassword: (data) =>
     client.put('/users/me/password', data),
 }
-
 
 export default client
